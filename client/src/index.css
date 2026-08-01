@@ -1,0 +1,12 @@
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f8fafc; color: #1a1a2e; }
+.wrap { max-width: 560px; margin: 2rem auto; padding: 0 1.25rem; }
+h1 { font-size: 1.6rem; margin: 0 0 0.25rem; }
+.muted { color: #6b7280; margin-top: 0; font-size: 0.9rem; line-height: 1.5; }
+.login { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.25rem 1.4rem; margin-top: 1.5rem; display: grid; gap: 0.7rem; max-width: 360px; }
+.login h2 { margin: 0 0 0.25rem; font-size: 1.15rem; }
+.login input { padding: 0.55rem 0.7rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; }
+button { padding: 0.55rem 0.9rem; border: none; border-radius: 8px; background: #4f46e5; color: #fff; font-weight: 600; cursor: pointer; font-size: 0.95rem; }
+button:disabled { opacity: 0.6; cursor: default; }
+.error { color: #b91c1c; font-size: 0.88rem; margin: 0; }
