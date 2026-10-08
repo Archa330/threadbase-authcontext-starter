@@ -1,10 +1,28 @@
 import { useState } from "react";
+import { useMutation } from "@tanstack/react-query";
+import apiClient from "../services/apiClient.js";
+import { useAuth } from "../auth/AuthContext.jsx";
 // TODO (task): import the pieces you need:
 // import { useMutation } from "@tanstack/react-query";
 // import apiClient from "../services/apiClient.js";
 // import { useAuth } from "../auth/AuthContext.jsx";
 
 export default function LoginPage() {
+  const { dispatch } = useAuth();
+  const loginMutation = useMutation({
+  mutationFn: (credentials) =>
+    apiClient.post("/auth/login", credentials).then((res) => res.data),
+
+  onSuccess: (data) => {
+    dispatch({
+      type: "LOGIN",
+      payload: {
+        user: data.user,
+        accessToken: data.accessToken,
+      },
+    });
+  },
+});
   // These fields are already wired to local state — leave them.
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

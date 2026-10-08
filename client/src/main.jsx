@@ -1,3 +1,4 @@
+import { AuthProvider } from "./auth/AuthContext.jsx";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -13,7 +14,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <QueryClientProvider client={queryClient}>
       {/* TODO (task): wrap <App /> in <AuthProvider> so the whole tree can call useAuth() */}
       <App />
+      <AuthProvider>
       <ReactQueryDevtools initialIsOpen={false} />
+      </AuthProvider>
     </QueryClientProvider>
   </React.StrictMode>
 );
